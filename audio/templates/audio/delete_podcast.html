@@ -1,0 +1,17 @@
+{% extends 'audio/main.html' %}
+{% block content %}
+<div class="header-bar">
+    <div>
+        <h1>Delete Form</h1>
+    </div>
+    <a href="{% url 'podcast-list' %}">Go back</a>
+</div>
+<div class="deleteform">
+    <form method="POST" action="">
+        {% csrf_token %}
+        <p>Are you sure you want to delete this item? "{{delPodItem}}"</p>
+        <input class="deleteforminputbutton" type="submit" value="Delete">
+    </form>
+</div>
+
+{% endblock content %}

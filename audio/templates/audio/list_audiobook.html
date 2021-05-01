@@ -1,0 +1,26 @@
+{% extends 'audio/main.html' %}
+{% block content %}
+<div class="header-bar">
+    <div>
+        <h1>My AudioBook List</h1>
+    </div>
+    <a href="{% url 'audiobook-item-create' %}">Add Item</a>
+    <a href="{% url 'home' %}">Go back</a>
+</div>
+
+<div class="list-wrapper">
+    <h3>Available AudioBooks</h3>
+    {% for item in audiobooks %}
+    <div class="item-wrapper">
+        <div class="one"><h4>{{ item.title }}</h4></div>
+        <div class="two"><a  id="extra"  href="{% url 'audiobook-item' item.id %}">View</a></div>
+        <div class="three"><a  id="extra"  href="{% url 'audiobook-item-update' item.id %}">Edit</a></div>
+        <div class="four"><a  id="extra"  href="{% url 'audiobook-item-delete' item.id %}">Delete</a></div>
+    </div>
+    {% empty %}
+    <h3>No items in the list </h3>
+    {% endfor %}
+
+</div>
+
+{% endblock %}

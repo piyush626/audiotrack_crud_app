@@ -1,0 +1,16 @@
+{% extends 'audio/main.html' %}
+{% block content %}
+<div class="header-bar">
+    <div>
+        <h3>Item: {{ bookdetails }}</h3>
+    </div>
+    <a href="{% url 'audiobook-list' %}">Go back</a>
+</div>
+<div class="createform">
+    <h3>Author: {{ bookdetails.author }}</h3>
+    <h3>Narrator: {{ bookdetails.narrator }}</h3>
+    <h3>Duration: {{ bookdetails.duration_seconds }}</h3>
+    <h3>upload time: {{ bookdetails.upload_time }}</h3>
+</div>
+
+{% endblock content %}

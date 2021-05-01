@@ -1,0 +1,14 @@
+{% extends 'audio/main.html' %}
+{% block content %}
+<div class="header-bar">
+    <div>
+        <h3>Item: {{ details }}</h3>
+    </div>
+    <a href="{% url 'song-list' %}">Go back</a>
+</div>
+<div class="createform">
+    <h3>Duration: {{ details.duration_seconds }}</h3>
+    <h3>Upload time: {{ details.upload_time }}</h3>
+</div>
+
+{% endblock content %}

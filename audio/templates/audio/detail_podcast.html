@@ -1,0 +1,22 @@
+{% extends 'audio/main.html' %}
+{% block content %}
+<div class="header-bar">
+    <div>
+        <h3>Item: {{ Poddetails }}</h3>
+    </div>
+    <a href="{% url 'podcast-list' %}">Go back</a>
+</div>
+<div class="createform">
+    <h3>Host: {{ Poddetails.host }}</h3>
+    <h3>Participants:</h3>
+    {% for candidate in Poddetails.candidates %}
+
+        <h3>{{ candidate.participant_name }}</h3>
+
+    {% empty %}
+        <h3>No participants for  this podcast</h3>
+    {% endfor %}
+</div>
+
+
+{% endblock content %}

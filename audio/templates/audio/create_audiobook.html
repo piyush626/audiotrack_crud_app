@@ -1,0 +1,21 @@
+{% extends 'audio/main.html' %}
+{% block content %}
+<div class="header-bar">
+    <div>
+        <h3>AudioBook Item Form</h3>
+    </div>
+    <a href="{% url 'audiobook-list' %}">Go back</a>
+</div>
+<div class="createform">
+    <form method="POST" action="">
+        {% csrf_token %}
+        <table>
+            {{form.as_table}}
+        </table>
+        <div class="createforminput">
+            <input class="createforminputbutton" type="submit" value="Submit">
+        </div>
+        
+    </form>
+</div>
+{% endblock content %}

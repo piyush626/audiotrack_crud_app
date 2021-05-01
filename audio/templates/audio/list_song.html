@@ -1,0 +1,35 @@
+{% extends 'audio/main.html' %}
+{% block content %}
+<div class="header-bar">
+    <div>
+        <h1>My Song List</h1>
+    </div>
+    <a href="{% url 'song-item-create' %}">Add Item</a>
+    <a href="{% url 'home' %}">Go back</a>
+</div>
+<div class="list-wrapper">
+    <h3>Available Songs</h3>
+    {% for item in songs %}
+    <div class="item-wrapper">
+        <h4>{{ item.song_name }}</h4>
+        <a  id="extra"  href="{% url 'song-item' item.id %}">View</a>
+        <a  id="extra"  href="{% url 'song-item-update' item.id %}">Edit</a>
+        <a  id="extra"  href="{% url 'song-item-delete' item.id %}">Delete</a>
+    </div>
+    {% empty %}
+    <h3>No items in the list </h3>
+    {% endfor %}
+
+</div>
+<!-- <table>
+    
+    <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    
+</table> -->
+
+{% endblock content %}

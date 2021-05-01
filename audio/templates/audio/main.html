@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audio Crud App</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200&display=swap" rel="stylesheet">
+    <style>
+        body{
+            background-color: #fafafa;
+            font-family: 'Nunito', sans-serif;
+            padding-top: 7%;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6
+            {
+                font-family: 'Raleway', sans-serif
+        }
+
+        a,
+        p {
+            color: #4b5156;
+        }
+
+        .container{
+            max-width: 550px;
+            min-height: 400px;
+            margin: auto;
+            background-color: #fff;
+            -webkit-box-shadow: 2px 2px 13px -4px rgba(0,0,0,0.21);
+            box-shadow: 2px 2px 13px -4px rgba(0,0,0,0.21);
+            
+        }
+
+        .header-bar{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            color: #fff;
+            padding: 10px;
+            border-radius: 5px 5px 0 0;
+            background: linear-gradient(90deg, #E50914 10%, #E50914 43%, #E50914 100%);
+        }
+
+        .header-bar a {
+            color: rgb(247,247,247);
+            text-decoration: none;
+        }
+
+        .tracks h1{
+            margin-left: 130px;
+        }
+        .tracks h3{
+            margin-left: 185px;
+        }
+        .tracktypes {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            padding-top: 40px;  
+        }
+        .songtrack {
+            background-color:#E50914;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+        .podcasttrack {
+            background-color: #E50914;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+        .audiobooktrack {
+            background-color: #E50914;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+        .createform {
+            padding-top: 60px;
+            padding-left: 80px;
+        }
+        
+        .createforminput  {
+            padding-top: 30px;
+            padding-left: 140px;
+        }
+
+        .createforminputbutton  {
+            background-color: #E50914;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+
+        .deleteform {
+            padding-top: 60px;
+            padding-left: 80px;
+        }
+
+        .deleteforminputbutton  {
+            background-color: #E50914;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+
+        .item-wrapper {
+            display: flex;
+            align-items: baseline;
+            justify-content: space-evenly;
+        }
+        .list-wrapper {
+            display: flex;
+            flex-direction: column;
+        }
+        .list-wrapper h3{
+            margin-left: 185px;
+        }
+        #extra {
+            background-color: #E50914;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        {% block content %}
+          
+        {% endblock content %}
+    </div>
+</body>
+</html>

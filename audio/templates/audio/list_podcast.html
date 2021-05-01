@@ -1,0 +1,26 @@
+{% extends 'audio/main.html' %}
+{% block content %}
+<div class="header-bar">
+    <div>
+        <h1>My PodCast List</h1>
+    </div>
+    <a href="{% url 'podcast-item-create' %}">Add Item</a>
+    <a href="{% url 'home' %}">Go back</a>
+</div>
+
+<div class="list-wrapper">
+    <h3>Available Podcasts</h3>
+    {% for item in podcasts %}
+    <div class="item-wrapper">
+        <h4>{{ item.podcast_name }}</h4>
+        <a  id="extra"  href="{% url 'podcast-item' item.id %}">View</a>
+        <a  id="extra"  href="{% url 'podcast-item-update' item.id %}">Edit</a>
+        <a  id="extra"  href="{% url 'podcast-item-delete' item.id %}">Delete</a>
+    </div>
+    {% empty %}
+    <h3>No items in the list </h3>
+    {% endfor %}
+
+</div>
+
+{% endblock content %}

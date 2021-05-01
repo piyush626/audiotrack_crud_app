@@ -1,0 +1,48 @@
+{% extends 'audio/main.html' %}
+{% block content %}
+
+<div class="header-bar">
+    <div>
+        <h1>Hello {{request.user|title}} </h1>
+    </div>
+    {% if request.user.is_authenticated %}
+    <a href="{% url 'logout' %}">Logout</a>
+    {% else %}
+    <a href="{% url 'login' %}">Login</a>
+    {% endif %}
+</div>
+
+<div class="tracks">
+
+    <h1>My Audio Tracks</h1>
+    <h3>Track Schemas</h3>
+    <div class="tracktypes">
+        <form action="song-list">
+            <button class = "songtrack" type="submit">
+                Songs
+            </button>
+        </form>
+        <form action="podcast-list">
+            <button class = "podcasttrack" type="submit">
+                Podcasts
+            </button>
+        </form>
+        <form action="audiobook-list">
+            <button class = "audiobooktrack" type="submit">
+                Audiobooks
+            </button>
+        </form>
+    </div>
+    
+    
+    <!-- <td><a href="{% url 'song-list' %}">Songs</a></td>
+    <td><a href="{% url 'podcast-list' %}">Podcasts</a></td>
+    <td><a href="{% url 'audiobook-list' %}">AudioBooks</a></td>
+       -->
+        
+
+</div>
+
+{% endblock %}
+    
+
